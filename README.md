@@ -1,33 +1,30 @@
 # 🚀 App Launcher
 
-Aplikasi launcher yang powerful dan user-friendly untuk mengelola dan meluncurkan aplikasi favorit Anda dengan mudah.
+Aplikasi launcher yang simple, cepat, dan user-friendly dengan tampilan accordion vertikal. Semua data disimpan di JavaScript tanpa localStorage.
 
 ## ✨ Fitur Utama
 
-- 📱 **Tampilan Responsif** - Pilih antara tampilan Grid atau Vertikal
-- 🎨 **Kustomisasi Penuh** - Edit header, footer, logo, dan kategori
-- 📂 **Pengelompokan Kategori** - Organisir aplikasi berdasarkan fungsinya
-- 🔍 **Fitur Pencarian** - Cari aplikasi dengan mudah
-- ✏️ **Edit Lengkap** - Ubah icon, deskripsi, dan link aplikasi
-- 💾 **Database JSON** - Semua data tersimpan di localStorage (JSON)
+- 📂 **Accordion Vertikal** - Kategori aplikasi bisa dibuka dan ditutup
+- 🔍 **Fitur Pencarian** - Cari aplikasi real-time berdasar nama atau deskripsi
+- 🎯 **Satu Klik Buka** - Tombol "🚀 Buka" untuk membuka aplikasi di tab baru
+- 💾 **Data di JavaScript** - Semua aplikasi dan kategori dalam file `data.js`
+- 🎨 **Responsive Design** - Bekerja sempurna di mobile, tablet, dan desktop
 - 🌈 **Warna-Warni** - Setiap kategori memiliki warna unik
-- 📊 **Toggle View** - Ubah tampilan dengan satu klik
 
 ## 🛠️ Teknologi
 
 - **HTML5** - Struktur halaman
-- **CSS3** - Styling dan responsive design
+- **CSS3** - Styling responsive dan accordion
 - **JavaScript** - Logika aplikasi
-- **localStorage** - Database JSON
 
 ## 📦 Struktur File
 
 ```
 app-launcher/
-├── index.html      # File HTML utama
-├── styles.css      # Stylesheet
-├── app.js          # Script utama aplikasi
-├── db.js           # Manajemen database
+├── index.html      # HTML utama (minimal dan clean)
+├── styles.css      # Stylesheet dengan accordion
+├── app.js          # Script utama (accordion & search)
+├── data.js         # Database aplikasi dan kategori
 └── README.md       # Dokumentasi ini
 ```
 
@@ -36,34 +33,35 @@ app-launcher/
 ### 1. Buka Aplikasi
 Buka file `index.html` di browser Anda.
 
-### 2. Mengatur Pengaturan Umum
-- Klik tombol **⚙️ Pengaturan**
-- Tab **Umum** untuk mengubah:
-  - Logo
-  - Judul Header
-  - Warna Header
-  - Teks Footer
+### 2. Navigasi Aplikasi
+- **Buka Kategori**: Klik judul kategori untuk membuka/menutup daftar aplikasi
+- **Cari Aplikasi**: Gunakan kotak pencarian untuk filter aplikasi
+- **Buka Aplikasi**: Klik tombol "🚀 Buka" untuk membuka di tab baru
 
-### 3. Mengelola Kategori
-- Klik **⚙️ Pengaturan**
-- Tab **Kategori** untuk:
-  - Tambah kategori baru
-  - Edit nama dan warna kategori
-  - Hapus kategori
+### 3. Menambah/Edit Aplikasi
+Edit file `data.js` dan tambahkan aplikasi ke array `apps`:
 
-### 4. Mengelola Aplikasi
-- **Tambah Aplikasi**: Akan ditambahkan di modal editor
-- **Edit Aplikasi**: Klik tombol ✏️ Edit pada aplikasi
-- **Hapus Aplikasi**: Klik Delete saat mengedit
-- **Buka Aplikasi**: Klik tombol 🚀 Buka
+```javascript
+{
+    id: '16',
+    name: 'Nama Aplikasi',
+    description: 'Deskripsi singkat',
+    icon: 'https://url-ke-icon.svg',
+    link: 'https://aplikasi.com',
+    category: 'productivity'
+}
+```
 
-### 5. Mengubah Tampilan
-- Klik tombol **📊** untuk toggle antara Grid dan Vertikal
-- Atau gunakan tombol "Grid" dan "Vertikal" di view controls
+### 4. Menambah Kategori
+Edit file `data.js` dan tambahkan kategori ke array `categories`:
 
-### 6. Mencari Aplikasi
-- Gunakan kotak pencarian untuk filter aplikasi
-- Pencarian otomatis berdasar nama dan deskripsi
+```javascript
+{
+    id: 'newcategory',
+    name: '📌 Nama Kategori',
+    color: '#4a90e2'
+}
+```
 
 ## 📝 Format Data Aplikasi
 
@@ -83,27 +81,25 @@ Buka file `index.html` di browser Anda.
 ```json
 {
   "id": "productivity",
-  "name": "Produktivitas",
+  "name": "📊 Produktivitas",
   "color": "#4a90e2"
 }
 ```
 
-## 💾 Export/Import Data
+## 🎨 Kustomisasi
 
-Data aplikasi disimpan di localStorage dengan format JSON. Anda dapat:
+### Ubah Logo dan Judul Header
+Buka `data.js` dan ubah objek `config`:
 
-1. **Backup Data**: Buka console browser dan jalankan:
-   ```javascript
-   console.log(exportDatabase());
-   ```
+```javascript
+const config = {
+    logo: 'https://url-ke-logo-anda.svg',
+    headerTitle: 'Judul Custom',
+    footerText: 'Teks Footer Custom'
+};
+```
 
-2. **Restore Data**: Jalankan di console:
-   ```javascript
-   importDatabase('{data JSON di sini}');
-   ```
-
-## 🎨 Kustomisasi Warna
-
+### Ubah Warna
 Edit variable CSS di `styles.css`:
 
 ```css
@@ -124,32 +120,30 @@ Aplikasi fully responsive dan bekerja sempurna di:
 - 📱 Tablet (768px+)
 - 💻 Desktop (1024px+)
 
-## 🔒 Privasi
-
-Semua data disimpan secara lokal di browser Anda menggunakan localStorage. Tidak ada data yang dikirim ke server.
-
 ## 🐛 Troubleshooting
 
-### Data Tidak Muncul
+### Aplikasi Tidak Muncul
 1. Buka Developer Console (F12)
-2. Jalankan: `initializeDatabase()`
-3. Refresh halaman
+2. Pastikan tidak ada error di console
+3. Refresh halaman (Ctrl+F5 atau Cmd+Shift+R)
 
-### Clear Data
-Jalankan di console:
-```javascript
-localStorage.clear();
-window.location.reload();
-```
+### Icon Tidak Tampil
+- Pastikan URL icon valid
+- Cek CORS headers jika menggunakan URL eksternal
+- Gunakan placeholder: `https://via.placeholder.com/50?text=IconName`
+
+### Search Tidak Berfungsi
+- Pastikan JavaScript enabled di browser
+- Cek console untuk error message
 
 ## 📋 Roadmap Fitur
 
-- [ ] Export/Import dengan file
-- [ ] Dark Mode
-- [ ] Drag & Drop untuk reorder
-- [ ] Sync ke cloud (Firebase/Supabase)
-- [ ] Mobile App
-- [ ] Custom shortcut keys
+- [ ] Edit aplikasi inline
+- [ ] Drag & drop untuk reorder
+- [ ] Dark mode
+- [ ] Export/Import JSON
+- [ ] Kategori favorit
+- [ ] Shortcuts keyboard
 
 ## 📄 Lisensi
 
@@ -157,7 +151,7 @@ Bebas digunakan untuk keperluan pribadi dan komersial.
 
 ## 👨‍💻 Pengembang
 
-Buat dengan ❤️ untuk kemudahan hidup digital Anda.
+Dibuat dengan ❤️ untuk kemudahan dan produktivitas digital.
 
 ---
 
