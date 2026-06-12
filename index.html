@@ -16,21 +16,14 @@
                     <h1 id="headerTitle">App Launcher</h1>
                 </div>
                 <div class="header-right">
-                    <button class="btn btn-settings" onclick="openSettingsModal()">⚙️ Pengaturan</button>
-                    <button class="btn btn-toggle" onclick="toggleViewMode()" title="Ubah tampilan">📊</button>
+                    <input type="text" id="searchInput" class="search-box" placeholder="🔍 Cari aplikasi...">
                 </div>
             </div>
         </header>
 
         <!-- Main Content -->
         <main class="main-content">
-            <div class="view-controls">
-                <button class="view-btn active" id="gridViewBtn" onclick="setViewMode('grid')">Grid</button>
-                <button class="view-btn" id="verticalViewBtn" onclick="setViewMode('vertical')">Vertikal</button>
-                <input type="text" id="searchInput" class="search-box" placeholder="🔍 Cari aplikasi...">
-            </div>
-
-            <div id="appsContainer" class="apps-container grid-view"></div>
+            <div id="appsContainer" class="apps-container"></div>
         </main>
 
         <!-- Footer -->
@@ -39,89 +32,8 @@
         </footer>
     </div>
 
-    <!-- Settings Modal -->
-    <div id="settingsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeSettingsModal()">&times;</span>
-            <h2>Pengaturan</h2>
-            <div class="settings-tabs">
-                <button class="tab-btn active" onclick="openTab('general')">Umum</button>
-                <button class="tab-btn" onclick="openTab('categories')">Kategori</button>
-            </div>
-
-            <!-- General Settings Tab -->
-            <div id="general" class="tab-content active">
-                <div class="setting-group">
-                    <label>Logo URL:</label>
-                    <input type="text" id="logoInput" class="input-field">
-                </div>
-                <div class="setting-group">
-                    <label>Judul Header:</label>
-                    <input type="text" id="headerTitleInput" class="input-field">
-                </div>
-                <div class="setting-group">
-                    <label>Warna Header:</label>
-                    <input type="color" id="headerColorInput" class="input-field">
-                </div>
-                <div class="setting-group">
-                    <label>Teks Footer:</label>
-                    <textarea id="footerTextInput" class="input-field"></textarea>
-                </div>
-                <button class="btn btn-primary" onclick="saveGeneralSettings()">Simpan</button>
-            </div>
-
-            <!-- Categories Tab -->
-            <div id="categories" class="tab-content">
-                <div id="categoriesList"></div>
-                <button class="btn btn-primary" onclick="addCategory()">+ Tambah Kategori</button>
-                <button class="btn btn-primary" onclick="saveCategorySettings()">Simpan Kategori</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- App Editor Modal -->
-    <div id="appEditorModal" class="modal">
-        <div class="modal-content modal-large">
-            <span class="close-modal" onclick="closeAppEditor()">&times;</span>
-            <h2 id="editorTitle">Edit Aplikasi</h2>
-            <div class="editor-form">
-                <div class="setting-group">
-                    <label>Nama Aplikasi:</label>
-                    <input type="text" id="appName" class="input-field">
-                </div>
-                <div class="setting-group">
-                    <label>Deskripsi:</label>
-                    <textarea id="appDescription" class="input-field"></textarea>
-                </div>
-                <div class="setting-group">
-                    <label>Icon URL:</label>
-                    <input type="text" id="appIcon" class="input-field">
-                </div>
-                <div class="setting-group">
-                    <label>Link/URL:</label>
-                    <input type="text" id="appLink" class="input-field">
-                </div>
-                <div class="setting-group">
-                    <label>Kategori:</label>
-                    <select id="appCategory" class="input-field"></select>
-                </div>
-                <div class="setting-group">
-                    <label>Preview Icon:</label>
-                    <div class="icon-preview">
-                        <img id="iconPreview" src="" alt="Preview">
-                    </div>
-                </div>
-                <div class="button-group">
-                    <button class="btn btn-primary" onclick="saveApp()">Simpan</button>
-                    <button class="btn btn-secondary" onclick="closeAppEditor()">Batal</button>
-                    <button class="btn btn-danger" id="deleteAppBtn" onclick="deleteApp()" style="display:none;">Hapus</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Scripts -->
-    <script src="db.js"></script>
+    <script src="data.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
