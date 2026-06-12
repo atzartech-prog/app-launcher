@@ -3,7 +3,7 @@
 let searchQuery = '';
 let collapsedCategories = new Set();
 
-// Initialize
+// Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', function() {
     loadConfiguration();
     renderApps();
@@ -20,7 +20,13 @@ function setupEventListeners() {
 
 // Load and Apply Configuration
 function loadConfiguration() {
-    document.getElementById('logo').src = config.logo;
+    const logoElement = document.getElementById('logo');
+    const iconClasses = config.logo.split(' ');
+    
+    iconClasses.forEach(iconClass => {
+        logoElement.classList.add(iconClass);
+    });
+    
     document.getElementById('headerTitle').textContent = config.headerTitle;
     document.getElementById('footerText').textContent = config.footerText;
 }
@@ -102,14 +108,29 @@ function createAppItem(app, categoryColor) {
     item.className = 'app-item';
     item.style.borderLeftColor = categoryColor;
     
-    item.innerHTML = `
-        <img src="${escapeHtml(app.icon)}" alt="${escapeHtml(app.name)}" class="app-icon" onerror="this.src='https://via.placeholder.com/50?text=${encodeURIComponent(app.name.substring(0,2))}'">
-        <div class="app-info">
-            <div class="app-name">${escapeHtml(app.name)}</div>
-            <div class="app-description">${escapeHtml(app.description)}</div>
-        </div>
-        <button class="app-link-btn" onclick="openApp('${escapeHtml(app.link)}')" title="Buka aplikasi">🚀 Buka</button>
+    // Ambil semua class icon dari app.icon
+    const iconClasses = app.icon.split(' ');
+    
+    // Create icon element
+    const iconElement = document.createElement('i');
+    iconElement.className = 'app-icon';
+    iconClasses.forEach(cls => {
+        iconElement.classList.add(cls);
+    });
+    
+    // Create info element
+    const infoElement = document.createElement('div');
+    infoElement.className = 'app-info';
+    infoElement.innerHTML = `
+        <div class="app-name">${escapeHtml(app.name)}</div>
+        <div class="app-description">${escapeHtml(app.description)}</div>
     `;
+    
+    item.appendChild(iconElement);
+    item.appendChild(infoElement);
+    
+    // Add click handler to open app
+    item.addEventListener('click', () => openApp(app.link));
     
     return item;
 }

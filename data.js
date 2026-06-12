@@ -1,6 +1,6 @@
 // Application Data
 const config = {
-    logo: 'https://via.placeholder.com/50?text=AL',
+    logo: 'fa-rocket',
     headerTitle: 'App Launcher',
     footerText: '© 2024 App Launcher. All rights reserved.'
 };
@@ -18,7 +18,7 @@ const apps = [
         id: '1',
         name: 'Google Drive',
         description: 'Penyimpanan cloud dan kolaborasi dokumen',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg',
+        icon: 'fas fa-cloud',
         link: 'https://drive.google.com',
         category: 'productivity'
     },
@@ -26,7 +26,7 @@ const apps = [
         id: '2',
         name: 'Trello',
         description: 'Manajemen proyek visual dengan papan kanban',
-        icon: 'https://upload.wikimedia.org/wikipedia/en/8/8c/Trello_logo.svg',
+        icon: 'fas fa-tasks',
         link: 'https://trello.com',
         category: 'productivity'
     },
@@ -34,7 +34,7 @@ const apps = [
         id: '3',
         name: 'Notion',
         description: 'Workspace all-in-one untuk notes dan database',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg',
+        icon: 'fas fa-book',
         link: 'https://notion.so',
         category: 'productivity'
     },
@@ -42,7 +42,7 @@ const apps = [
         id: '4',
         name: 'GitHub',
         description: 'Platform version control dan kolaborasi kode',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg',
+        icon: 'fab fa-github',
         link: 'https://github.com',
         category: 'development'
     },
@@ -50,7 +50,7 @@ const apps = [
         id: '5',
         name: 'VS Code',
         description: 'Editor kode yang powerful dan extensible',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg',
+        icon: 'fas fa-code',
         link: 'https://code.visualstudio.com',
         category: 'development'
     },
@@ -58,7 +58,7 @@ const apps = [
         id: '6',
         name: 'Stack Overflow',
         description: 'Q&A untuk developer dan programmer',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Stack_Overflow_icon.svg',
+        icon: 'fas fa-square',
         link: 'https://stackoverflow.com',
         category: 'development'
     },
@@ -66,7 +66,7 @@ const apps = [
         id: '7',
         name: 'Figma',
         description: 'Tool desain kolaboratif berbasis cloud',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
+        icon: 'fas fa-pencil-ruler',
         link: 'https://figma.com',
         category: 'design'
     },
@@ -74,7 +74,7 @@ const apps = [
         id: '8',
         name: 'Canva',
         description: 'Desain grafis dengan template siap pakai',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_logo.svg',
+        icon: 'fas fa-palette',
         link: 'https://canva.com',
         category: 'design'
     },
@@ -82,7 +82,7 @@ const apps = [
         id: '9',
         name: 'Adobe XD',
         description: 'Design dan prototyping UI/UX',
-        icon: 'https://via.placeholder.com/50?text=XD',
+        icon: 'fas fa-edit',
         link: 'https://www.adobe.com/products/xd.html',
         category: 'design'
     },
@@ -90,7 +90,7 @@ const apps = [
         id: '10',
         name: 'Twitter',
         description: 'Platform media sosial untuk berbagi berita',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg',
+        icon: 'fab fa-twitter',
         link: 'https://twitter.com',
         category: 'social'
     },
@@ -98,7 +98,7 @@ const apps = [
         id: '11',
         name: 'LinkedIn',
         description: 'Jaringan profesional untuk karir dan bisnis',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png',
+        icon: 'fab fa-linkedin',
         link: 'https://linkedin.com',
         category: 'social'
     },
@@ -106,7 +106,7 @@ const apps = [
         id: '12',
         name: 'Instagram',
         description: 'Platform berbagi foto dan video',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram.svg',
+        icon: 'fab fa-instagram',
         link: 'https://instagram.com',
         category: 'social'
     },
@@ -114,7 +114,7 @@ const apps = [
         id: '13',
         name: 'YouTube',
         description: 'Platform berbagi video terbesar di dunia',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg',
+        icon: 'fab fa-youtube',
         link: 'https://youtube.com',
         category: 'entertainment'
     },
@@ -122,7 +122,7 @@ const apps = [
         id: '14',
         name: 'Netflix',
         description: 'Streaming film dan series berkualitas tinggi',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg',
+        icon: 'fas fa-play',
         link: 'https://netflix.com',
         category: 'entertainment'
     },
@@ -130,7 +130,7 @@ const apps = [
         id: '15',
         name: 'Spotify',
         description: 'Platform streaming musik terbaik',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Spotify_App_Logo.svg',
+        icon: 'fab fa-spotify',
         link: 'https://spotify.com',
         category: 'entertainment'
     }
